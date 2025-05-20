@@ -1,7 +1,15 @@
 const userService = require('../services/userService');
 
 const cadastro = async (req, res) => {
-    const { email, password } = req.query;// bory;
+    const { email, password } = req.body;// bory;
+
+    console.log("Email recebido:", email);
+    console.log("Password recebido:", password);
+
+    if (!email || !password) {
+    return res.status(400).json({ message: "Email e senha são obrigatórios" });
+    }
+
 
     try {
         const id = await userService.cadastroUser(email, password);

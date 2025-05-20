@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
+const db = require('../api/models/db')
 
 const app = express();
 app.use(express.json());
