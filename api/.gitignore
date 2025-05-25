@@ -1,0 +1,12 @@
+# Ignorar dependências
+node_modules/
+
+# Ignorar variáveis de ambiente (senhas, configs)
+.env
+
+# Ignorar arquivos temporários
+*.log
+.DS_Store
+
+#Pasta tela
+tela

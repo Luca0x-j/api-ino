@@ -1,5 +1,7 @@
 const userService = require('../services/userService');
 
+
+//Cadastro
 const cadastro = async (req, res) => {
     const { email, password } = req.body;// bory;
 
@@ -24,9 +26,13 @@ const cadastro = async (req, res) => {
     }
 };
 
+//Login
 const login = async (req, res) => {
 
   const { email, password } = req.query;
+
+  console.log("Email recebido:", email);
+  console.log("Password recebido:", password);
 
   if (!email || !password) {
     return res.status(400).json({ message: 'Email e senha são obrigatórios' });
@@ -45,7 +51,24 @@ const login = async (req, res) => {
   }
 };
 
+//Velocidade Motor
+const salvarVelocidade = async (req, res) => {
+  const { velocidade, id_usuario } = req.body;
+
+  if (!velocidade || !id_usuario) {
+    return res.status(400).json({ message: 'Velocidade é obrigatória' });
+  }
+
+  try {
+    await userService.salvarVelocidadeMoto(velocidade, id_usuario);
+    res.status(201).json({ message: 'Velocidade salva com sucesso' });
+  } catch (error) {
+    res.status(500).json({ message: 'Erro ao salvar velocidade', error: error.message });
+  }
+};
+
 module.exports = {
     cadastro,
-    login
+    login,
+    salvarVelocidade
 }
