@@ -29,6 +29,7 @@ O objetivo e fornecer comunicação entre Backend e Banco de Dados, para armazen
 
 ## Estrutura do Projeto
 
+
 📁 api 
 ├── 📁 controllers  
 ├── 📁 models  
@@ -47,23 +48,26 @@ O objetivo e fornecer comunicação entre Backend e Banco de Dados, para armazen
 1. Clone o repositório
 ```bash
 git clone https://github.com/Luca0x-j/api-ino.git
-
+```
 2. Instale as dependências
+```bash
 npm install
+```
 
 3.Configure o arquivo .env
-
+```bash
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=sua_senha
 DB_NAME=nome_do_banco
+```
 
 4.Rode as migrações no MySQL (ou crie a estrutura do banco manualmente)
 
 5.Inicie o projeto
-
+```bash
 npm start
-
+```
 
 
 ## Autor
